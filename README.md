@@ -63,4 +63,18 @@ If you are on Ubuntu or any linux system, you can download Govie tar package fro
 
 [Govie tar package](https://github.com/narenaryan/Govie/blob/master/pkg/govie.tar)
 
+Then navigate to downloaded folder and do
 
+  ```
+   $ tar -xvf govie.tar
+  ```
+It gives a binary executable called <b>govie</b>. Now you can use it with the above syntax of execution. But for universal accesing of executable add a ALIAS in <b>.bashrc </b> or <b>.zshrc </b>.
+
+### Debugging
+
+Govie creates a file in your home directory for purpose of logging and crash reporting that file is <b>govie.log</b>. Contents of that log file are used to report bugs if tool crashes.
+
+  ```
+  ~/govie.log
+  ```
+  ![command_open](https://github.com/narenaryan/Govie/blob/master/README_files/govie_log.png)
