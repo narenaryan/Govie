@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Govie by narenaryan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Govie</h1>
+      <h2 class="project-tagline">A command line tool for movie buffs. Instantly access movie pages from IMDB, Know the rating of your favorite movie, Download a poster, Create thumbnail collectionn</h2>
+      <a href="https://github.com/narenaryan/Govie" class="btn">View on GitHub</a>
+      <a href="https://github.com/narenaryan/Govie/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/narenaryan/Govie/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="govie-" class="anchor" href="#govie-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Govie <img src="https://github.com/narenaryan/Govie/blob/master/README_files/govie.png" alt="Smiley face" height="80" width="90">
+</h1>
+
+<p>Govie is a linux command line tool for movie buffs. Govie allows you to:</p>
+
+<ul>
+<li>Instantly access movie pages from IMDB</li>
+<li>Know the rating and other details of a new movie</li>
+<li>Download and maintain poster collection of the movies you like.</li>
+<li>Flexibility to read from command line arguments.</li>
+<li>Ability to downloadable posters in light speed.</li>
+<li>Can read and process list of movies from a file</li>
+</ul>
+
+<p>Now let me show you how tool works.</p>
+
+<h3>
+<a id="opening-a-movie-page-of-imdb" class="anchor" href="#opening-a-movie-page-of-imdb" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Opening a Movie page of IMDB</h3>
+
+<p><img src="https://github.com/narenaryan/Govie/blob/master/README_files/open_movies.png" alt="command_open"></p>
+
+<p>Use <b>-o</b> flag to open a movie's IMDB page in browser.</p>
+
+<pre><code>  $ ./govie -o american-hustle gods-of-egypt
+</code></pre>
+
+<p>When we type the command, it takes us to the IMDB page of respective movie. Now we will see these two IMDB pages opened for us already in browser.</p>
+
+<p><img src="https://github.com/narenaryan/Govie/blob/master/README_files/american_hustle.png" alt="command_open">
+<img src="https://github.com/narenaryan/Govie/blob/master/README_files/gods_egypt.png" alt="command_open"></p>
+
+<h3>
+<a id="getting-details-of-a-movie" class="anchor" href="#getting-details-of-a-movie" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting details of a movie</h3>
+
+<p>Instead of launching browser, we can have a quick peek at details. Like curious to know about rating of a movie etc. We need to use <b>-d</b> option here.</p>
+
+<pre><code>  $ ./govie -d jurassic-park titanic outlander
+</code></pre>
+
+<p>Then output is visible on terminal itself.
+<img src="https://github.com/narenaryan/Govie/blob/master/README_files/movie_details.png" alt="command_open"></p>
+
+<p>Sometimes a movie name can create ambuiguity. So If you know the release year of the movie, we can pass it in <b>-y</b> option to get correct details.</p>
+
+<pre><code>  $ ./govie -d -y=2016 tarzan
+</code></pre>
+
+<p>This gives the details about The Legend of the Tarzan (2016).</p>
+
+<h3>
+<a id="saving-a-movie-poster" class="anchor" href="#saving-a-movie-poster" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Saving a movie poster</h3>
+
+<p>We can use <b>-p</b> option to save the poster of a movie in a given directory. Govie also takes multiple movies at the same time to download their posters to the given directory.</p>
+
+<pre><code>  $ ./govie -p jurassic-park titanic outlander ~/posters
+</code></pre>
+
+<p>We should pass movies &amp; poster save directory path to the above -p option
+  Using it we can create our own poster collection in our computer. Govie tries to fetch a decent quality poster for a movie.</p>
+
+<p><img src="https://github.com/narenaryan/Govie/blob/master/README_files/posters.png" alt="command_open"></p>
+
+<h3>
+<a id="downloading-and-installing-govie" class="anchor" href="#downloading-and-installing-govie" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Downloading and installing Govie</h3>
+
+<p>If you are on Ubuntu or any linux system, you can download Govie tar package from here.</p>
+
+<p><a href="https://github.com/narenaryan/Govie/blob/master/pkg/govie.tar">Govie tar package</a></p>
+
+<p>Then navigate to downloaded folder and do</p>
+
+<pre><code>   $ tar -xvf govie.tar
+</code></pre>
+
+<p>It gives a binary executable called <b>govie</b>. Now you can use it with the above syntax of execution. But for universal accesing of executable add a ALIAS in <b>.bashrc </b> or <b>.zshrc </b>.</p>
+
+<h3>
+<a id="debugging" class="anchor" href="#debugging" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Debugging</h3>
+
+<p>Govie creates a file in your home directory for purpose of logging and crash reporting that file is <b>govie.log</b>. Contents of that log file are used to report bugs if tool crashes.</p>
+
+<pre><code>  ~/govie.log
+</code></pre>
+
+<p><img src="https://github.com/narenaryan/Govie/blob/master/README_files/govie_log.png" alt="command_open"></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/narenaryan/Govie">Govie</a> is maintained by <a href="https://github.com/narenaryan">narenaryan</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
